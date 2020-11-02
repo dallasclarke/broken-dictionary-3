@@ -1,4 +1,4 @@
-const router = require('express').Router;
+const router = require('express').Router();
 
 const {
   getAllWords,
@@ -6,6 +6,7 @@ const {
   getAddWord,
   addWord,
   updateWord,
+  getUpdateWord,
   deleteWord
 } = require('./controllers/wordController');
 
@@ -29,4 +30,4 @@ router.put('/update/:wordId', updateWord);
 //Delete Word from DB
 router.delete('/delete/:wordId', deleteWord);
 
-module.exports = route;
+module.exports = router;

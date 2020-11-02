@@ -1,12 +1,12 @@
 const Word = require('../models/Word');
 
 module.exports = {
-  getAllWords: (res, req) => {
+  getAllWords: (req, res) => {
     Word.find()
       .then((foundWords) => {
         return res.render('main/index', { wordsList: foundWords });
       })
-      .catch((err) => res.json({ err }));
+      .catch((err) => res.json({err}));
   },
   getSingleWord: (req, res) => {
     Word.findById(req.params.wordId)
